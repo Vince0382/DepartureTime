@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DepartureTime.Settings"
+             xmlns:cnv="clr-namespace:DepartureTime.Converters;assembly=DepartureTime" 
+             xmlns:custom="clr-namespace:DepartureTime.CustomControls;assembly=DepartureTime"
+             >
+
+    <Grid
+        BackgroundColor="{Binding UserBackgroundColor}"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="10"
+        Margin="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>  
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="{Binding Path=Language[DicBackground]}"
+               TextColor="{Binding UserTextColor}"
+               Grid.Row="0"
+               Grid.Column="0"
+               VerticalOptions="CenterAndExpand"/>
+        <custom:CustomColorPicker BackgroundColor="{Binding UserTextColor}"
+                                  TextColor="{Binding UserBackgroundColor}"
+                                  SelectedItem="{Binding UserBackgroundColor, Converter={cnv:StringToColorConverter}, Mode=TwoWay}"
+                                  Grid.Row="0"
+                                  Grid.Column="1"/>  
+
+        <Label Text="{Binding Path=Language[DicTextColor]}"
+               TextColor="{Binding UserTextColor}"
+               Grid.Row="1"
+               Grid.Column="0"
+               VerticalOptions="CenterAndExpand"/>
+        <custom:CustomColorPicker BackgroundColor="{Binding UserTextColor}"
+                                  TextColor="{Binding UserBackgroundColor}"
+                                  SelectedItem="{Binding UserTextColor, Converter={cnv:StringToColorConverter}, Mode=TwoWay}"
+                                  Grid.Row="1"
+                                  Grid.Column="1"/>
+
+        <Label Text="{Binding Path=Language[DicSetWorkingHours]}"
+               Grid.Row="2"
+               Grid.Column="0"
+               TextColor="{Binding UserTextColor}"
+               VerticalOptions="CenterAndExpand" />                
+        <custom:CustomTimePicker24H Time="{Binding WorkingHours, Mode=TwoWay}"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    BackgroundColor="{Binding UserTextColor}"
+                                    Format="HH:mm"
+                                    TextColor="{Binding UserBackgroundColor}"
+                                    VerticalOptions="CenterAndExpand" />
+        
+        <Label Text="{Binding Path=Language[DicLanguage]}"
+               Grid.Row="3"
+               Grid.Column="0"
+               TextColor="{Binding UserTextColor}"
+               VerticalOptions="CenterAndExpand" />
+        <Picker x:Name="LanguagePicker"
+                Grid.Row="3"
+                Grid.Column="1"
+                ItemsSource="{Binding LanguageList}"
+                SelectedItem="{Binding LanguageLabel, Mode=TwoWay}"
+                BackgroundColor="{Binding UserTextColor}"
+                TextColor="{Binding UserBackgroundColor}">
+        </Picker>
+
+        <Button Grid.ColumnSpan="2"
+                Grid.Row="4"
+                Text="{Binding Path=Language[DicBtSave]}"
+                BackgroundColor="{Binding UserBackGroundColor}"
+                TextColor="{Binding UserTextColor}"
+                BorderColor="{Binding UserTextColor}"
+                BorderWidth="1"
+                BorderRadius="20"
+                Margin="40,0,40,0"
+                Command="{Binding Save}"/>
+
+    </Grid>
+</ContentView>

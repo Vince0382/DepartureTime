@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Labels>
+    <Label Name="DicTitle">
+        <English>Departure Time Calculator</English>
+        <Francais>Heure de Depart</Francais>
+    </Label>
+    <Label Name="DicWorkingHours">
+        <English>Working Hours</English>
+        <Francais>Heures de Travail</Francais>
+    </Label>
+    <Label Name="DicArrival">
+        <English>Arrival</English>
+        <Francais>Arrivee</Francais>
+    </Label>
+    <Label Name="DicLunchBreak">
+        <English>Lunch Break</English>
+        <Francais>Pause Dejeuner</Francais>
+    </Label>
+    <Label Name="DicCalculLunch">
+        <English>Calculate Lunch Break</English>
+        <Francais>Calculer Pause Dejeuner</Francais>
+    </Label>
+    <Label Name="DicLunchStart">
+        <English>Start</English>
+        <Francais>Debut</Francais>
+    </Label>
+    <Label Name="DicLunchEnd">
+        <English>End</English>
+        <Francais>Fin</Francais>
+    </Label>
+    <Label Name="DicLbResult1">
+        <English>Minimum Departure Time</English>
+        <Francais>Heure de Depart Minimum</Francais>
+    </Label>
+    <Label Name="DicLbResult2">
+        <English>Without any gain nor loss</English>
+        <Francais>Sans gain ni perte</Francais>
+    </Label>
+    <Label Name="DicBackground">
+        <English>Background Color</English>
+        <Francais>Couleur de Fond</Francais>
+    </Label>
+    <Label Name="DicTextColor">
+        <English>Text Color</English>
+        <Francais>Couleur de Texte</Francais>
+    </Label>
+    <Label Name="DicBtSave">
+        <English>Save</English>
+        <Francais>Sauvegarder</Francais>
+    </Label>
+    <Label Name="DicSetWorkingHours">
+        <English>Set Working Hours</English>
+        <Francais>Definir Heures de Travail</Francais>
+    </Label>
+    <Label Name="DicLanguage">
+        <English>Language</English>
+        <Francais>Langue</Francais>
+    </Label>
+
+
+
+</Labels>

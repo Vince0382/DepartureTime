@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Labels>
+    <Label Name="DicTitle">
+        <Text lang="English">Departure Time Calculator</Text>
+        <Text lang="Francais">Heure de Depart</Text>
+    </Label>
+    <Label Name="DicWorkingHours">
+        <Text lang="English">Working Hours</Text>
+        <Text lang="Francais">Heures de Travail</Text>
+    </Label>
+    <Label Name="DicArrival">
+        <Text lang="English">Arrival</Text>
+        <Text lang="Francais">Arrivee</Text>
+    </Label>
+    <Label Name="DicLunchBreak">
+        <Text lang="English">Lunch Break</Text>
+        <Text lang="Francais">Pause Dejeuner</Text>
+    </Label>
+    <Label Name="DicCalculLunch">
+        <Text lang="English">Calculate Lunch Break</Text>
+        <Text lang="Francais">Calculer Pause Dejeuner</Text>
+    </Label>
+    <Label Name="DicLunchStart">
+        <Text lang="English">Start</Text>
+        <Text lang="Francais">Debut</Text>
+    </Label>
+    <Label Name="DicLunchEnd">
+        <Text lang="English">End</Text>
+        <Text lang="Francais">Fin</Text>
+    </Label>
+    <Label Name="DicLbResult1">
+        <Text lang="English">Minimum Departure Time</Text>
+        <Text lang="Francais">Heure de Depart Minimum</Text>
+    </Label>
+    <Label Name="DicLbResult2">
+        <Text lang="English">Without any gain nor loss</Text>
+        <Text lang="Francais">Sans gain ni perte</Text>
+    </Label>
+    <Label Name="DicBackground">
+        <Text lang="English">Background Color</Text>
+        <Text lang="Francais">Couleur de Fond</Text>
+    </Label>
+    <Label Name="DicTextColor">
+        <Text lang="English">Text Color</Text>
+        <Text lang="Francais">Couleur de Texte</Text>
+    </Label>
+    <Label Name="DicBtSave">
+        <Text lang="English">Save</Text>
+        <Text lang="Francais">Sauvegarder</Text>
+    </Label>
+    <Label Name="DicSetWorkingHours">
+        <Text lang="English">Set Working Hours</Text>
+        <Text lang="Francais">Definir Heures de Travail</Text>
+    </Label>
+    <Label Name="DicLanguage">
+        <Text lang="English">Language</Text>
+        <Text lang="Francais">Langue</Text>
+    </Label>
+
+
+
+</Labels>

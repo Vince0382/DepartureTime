@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:DepartureTime" 
+             xmlns:custom="clr-namespace:DepartureTime.CustomControls;assembly=DepartureTime"
+             x:Class="DepartureTime.DepartureTimePage"
+             x:Name="This"
+             BackgroundColor="{Binding UserBackgroundColor}"
+             Padding="0"> 
+    
+    <StackLayout x:Name="mainlayout" 
+                 BackgroundColor="{Binding UserBackgroundColor}" 
+                 Margin="0,20,0,0">
+        <StackLayout VerticalOptions="Start">
+            <Label Text="Departure time calculator"
+                   Margin="20,20,20,5"
+                   FontSize="27"
+                   TextColor="{Binding UserTextColor}"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text=""
+                   Margin="10"
+                   BackgroundColor="{Binding UserTextColor}"
+                   HorizontalOptions="FillAndExpand"
+                   HeightRequest="1" />
+        </StackLayout>
+        <StackLayout VerticalOptions="CenterAndExpand">
+                <Label Text="Working Hours"
+                       FontSize="22"
+                       TextColor="{Binding UserTextColor}"
+                       HorizontalOptions="CenterAndExpand" />
+                
+                <custom:CustomTimePicker24H x:Name="workingtimetext"
+                                            Time="{Binding WorkingHours, Mode=TwoWay}"
+                                            BackgroundColor="{Binding UserTextColor}"
+                                            Format="HH:mm"
+                                            TextColor="{Binding UserBackgroundColor}"
+                                            HorizontalOptions="CenterAndExpand" />
+
+                <Label Text="Arrival"
+                       Margin="0,10,0,0"
+                       FontSize="22"
+                       TextColor="{Binding UserTextColor}"
+                       HorizontalOptions="CenterAndExpand" />
+
+                <TimePicker x:Name="arrivaltext"
+                            Time="{Binding Arrival, Mode=TwoWay}"
+                            TextColor="{Binding UserBackgroundColor}"
+                            BackgroundColor="{Binding UserTextColor}"
+                            HorizontalOptions="CenterAndExpand" />
+
+                <Label Text="Lunch Break"
+                       Margin="0,10,0,0"
+                       FontSize="22"
+                       TextColor="{Binding UserTextColor}"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <custom:CustomTimePicker24H x:Name="lunchbreaktext"
+                                            Time="{Binding LunchBreak, Mode=TwoWay}"
+                                            Format="HH:mm"
+                                            TextColor="{Binding UserBackgroundColor}"
+                                            BackgroundColor="{Binding UserTextColor}"
+                                            HorizontalOptions="CenterAndExpand" />
+
+            
+                <StackLayout Orientation="Horizontal" 
+                             BackgroundColor="{Binding UserBackgroundColor}"
+                             HorizontalOptions="FillAndExpand" 
+                             Margin="20,20,20,0"
+                             VerticalOptions="Center">
+                    
+                       <Label Text="Calculate lunch break" 
+                              TextColor="{Binding UserTextColor}" 
+                              VerticalOptions="CenterAndExpand" 
+                              HorizontalOptions="StartAndExpand"/>
+                    
+                       <Switch x:Name="calculswitch" 
+                               IsToggled="{Binding ShowCalculateLunch, Mode=TwoWay}"
+                               HorizontalOptions="End" 
+                               VerticalOptions="Center"/>
+
+                </StackLayout>
+                                     
+                <StackLayout x:Name="SettingsStack"
+                             IsVisible="{Binding ShowCalculateLunch}"
+                             Orientation="Horizontal" 
+                             HorizontalOptions="FillAndExpand" 
+                             VerticalOptions="Center"
+                             BackgroundColor="{Binding UserBackgroundColor}"
+                             Margin="10">
+                
+                        <Label Text="Start"
+                               Margin="40,0,0,0"
+                               TextColor="{Binding UserTextColor}" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="CenterAndExpand"/>
+                
+                        <TimePicker x:Name="inlunch"
+                                    Time="{Binding LunchStart, Mode=TwoWay}"
+                                    TextColor="{Binding UserBackgroundColor}"
+                                    BackgroundColor="{Binding UserTextColor}"
+                                    VerticalOptions="Center" 
+                                    HorizontalOptions="CenterAndExpand" />
+                
+                        <Label Text="End"
+                               TextColor="{Binding UserTextColor}" 
+                               VerticalOptions="Center" 
+                               HorizontalOptions="CenterAndExpand"/>
+                
+                        <TimePicker x:Name="outlunch"
+                                    Time="{Binding LunchEnd, Mode=TwoWay}"
+                                    Margin="0,0,40,0"
+                                    TextColor="{Binding UserBackgroundColor}"
+                                    BackgroundColor="{Binding UserTextColor}"
+                                    VerticalOptions="Center" 
+                                    HorizontalOptions="CenterAndExpand"/>
+                 </StackLayout>
+
+                 <StackLayout BackgroundColor="{Binding UserBackgroundColor}">
+
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="0,70,0,0">
+                        
+                            <Label Text=""
+                                   Margin="10,0,10,0"
+                                   BackgroundColor="{Binding UserTextColor}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="1" />
+                        
+                            <Label Text="Minimum Departure Time"
+                                   Margin="-25,0,-25,0"
+                                   FontSize="22"
+                                   TextColor="{Binding UserTextColor}"
+                                   HorizontalOptions="CenterAndExpand" />
+                        
+                            <Label Text=""
+                                   Margin="10,0,10,0"
+                                   BackgroundColor="{Binding UserTextColor}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="1" />
+                        </StackLayout>
+                    
+                        <Label Text="Without any gain nor loss"
+                               Margin="0,-8,0,0"
+                               FontSize="12"
+                               TextColor="{Binding UserTextColor}"
+                               HorizontalOptions="CenterAndExpand" />  
+
+                        <Label x:Name="resultlabel"
+                               Text="{Binding Result}"
+                               FontAttributes="Bold"
+                               FontSize="24"
+                               TextColor="{Binding UserTextColor}"
+                               HorizontalOptions="CenterAndExpand" />
+                 </StackLayout>
+        </StackLayout>
+        <StackLayout VerticalOptions="End"
+                     HorizontalOptions="FillAndExpand"
+                     Orientation="Horizontal"
+                     BackgroundColor="{Binding UserBackgroundColor}">
+                 <Button x:Name="mainsettings" 
+                         Image="settings.png"
+                         Clicked="InitiateRotation"
+                         HorizontalOptions="CenterAndExpand"/>
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
