@@ -18,7 +18,7 @@ namespace DepartureTime.Classes
 		private const string _BaliseBGC = "BackgroundColor";
 		private const string _BaliseTC = "TextColor";
 		private const string _BaliseLN = "Language";
-
+        
         //Get all languages available
 
 		public Languages GetLanguages()

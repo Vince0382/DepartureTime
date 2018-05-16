@@ -1,5 +1,4 @@
 ﻿using Xamarin.Forms;
-using DepartureTime.ViewModels;
 
 namespace DepartureTime
 {
@@ -7,8 +6,8 @@ namespace DepartureTime
     {
         
         public Main()
-        {
-            InitializeComponent();
+        {         
+			InitializeComponent();
         }
 
     }

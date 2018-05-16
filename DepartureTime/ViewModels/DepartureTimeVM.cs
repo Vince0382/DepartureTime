@@ -22,9 +22,7 @@ namespace DepartureTime.ViewModels
         private TimeSpan _lunchEnd;
         private TimeSpan _result;
         private DateTime _currentTime = DateTime.Today;
-
-
-
+       
 
         public string LanguageLabel
         {
@@ -66,7 +64,7 @@ namespace DepartureTime.ViewModels
             {
                 if (_data.BgColor != value)
                 {
-                    _data.BgColor = value;
+					_data.BgColor = value;
                     OnPropertyChangedEvent("UserBackgroundColor");
                 }
             }
@@ -243,7 +241,9 @@ namespace DepartureTime.ViewModels
             _languageList = _languages.AvailableLanguage;
             Language = _languages.GetLanguageDic(LanguageLabel);
 
-            SetNotification = new Command(() =>
+           
+
+			SetNotification = new Command(() =>
                 {
                     CrossLocalNotifications.Current.Show("Departure Time - Minimum Time Reached", "You can Go now !!!", 101, BuildNotificationTime());
                 });

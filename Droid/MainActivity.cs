@@ -1,11 +1,7 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
 
@@ -16,14 +12,15 @@ namespace DepartureTime.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
+			TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
 
-
-            CarouselViewRenderer.Init();
+			       
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+			CarouselViewRenderer.Init();   
+
 
             LoadApplication(new App());
         }

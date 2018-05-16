@@ -78,7 +78,7 @@
         <Button Grid.ColumnSpan="2"
                 Grid.Row="4"
                 Text="{Binding Path=Language[DicBtSave]}"
-                BackgroundColor="{Binding UserBackGroundColor}"
+                BackgroundColor="Transparent"
                 TextColor="{Binding UserTextColor}"
                 BorderColor="{Binding UserTextColor}"
                 BorderWidth="1"

@@ -2229,8 +2229,6 @@ namespace DepartureTime.Droid
 			global::Com.ViewPagerIndicator.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth = global::DepartureTime.Droid.Resource.Styleable.CirclePageIndicator_vpiStrokeWidth;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator = global::DepartureTime.Droid.Resource.Styleable.ViewPagerIndicator;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle = global::DepartureTime.Droid.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle;
-			global::PCLStorage.Resource.String.ApplicationName = global::DepartureTime.Droid.Resource.String.ApplicationName;
-			global::PCLStorage.Resource.String.Hello = global::DepartureTime.Droid.Resource.String.Hello;
 			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::DepartureTime.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::DepartureTime.Droid.Resource.Attribute.actionBarSize;
 		}
@@ -6263,12 +6261,6 @@ namespace DepartureTime.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f09003f
-			public const int ApplicationName = 2131296319;
-			
-			// aapt resource value: 0x7f09003e
-			public const int Hello = 2131296318;
-			
 			// aapt resource value: 0x7f090015
 			public const int abc_action_bar_home_description = 2131296277;
 			
@@ -6371,8 +6363,8 @@ namespace DepartureTime.Droid
 			// aapt resource value: 0x7f090038
 			public const int character_counter_pattern = 2131296312;
 			
-			// aapt resource value: 0x7f090040
-			public const int library_name = 2131296320;
+			// aapt resource value: 0x7f09003e
+			public const int library_name = 2131296318;
 			
 			// aapt resource value: 0x7f090000
 			public const int mr_button_content_description = 2131296256;

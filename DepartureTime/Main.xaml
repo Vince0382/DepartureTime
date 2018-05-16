@@ -16,8 +16,8 @@
           RowSpacing="0">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>  
 
@@ -176,18 +176,26 @@
                                FontSize="12"
                                TextColor="{Binding UserTextColor}"
                                HorizontalOptions="CenterAndExpand" />  
+                        <custom:CustomShadowEffects HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               BackgroundColor="{Binding UserBackgroundColor}"
+                               Margin="0,12,0,15"
+                               HasShadow="true"
+                               ShadowColor="{Binding UserTextColor}">
+                
+                               <Button x:Name="resultlabel"
+                                       Text="{Binding Result, StringFormat='{0:c}'}"
+                                       FontAttributes="Bold"
+                                       FontSize="24"
+                                       BorderWidth="0"
+                                       BackgroundColor="{Binding UserBackgroundColor}"
+                                       TextColor="{Binding UserTextColor}"
+                                       HorizontalOptions="CenterAndExpand"
+                                       Margin="-15"
+                                       Command="{Binding SetNotification}">
+                               </Button> 
 
-                        <Label x:Name="resultlabel"
-                               Text="{Binding Result, StringFormat='{0:c}'}"
-                               FontAttributes="Bold"
-                               FontSize="24"
-                               TextColor="{Binding UserTextColor}"
-                               HorizontalOptions="CenterAndExpand"
-                               Margin="0,0,0,10">
-                               <Label.GestureRecognizers>
-                                   <TapGestureRecognizer Command="{Binding SetNotification}"/>
-                               </Label.GestureRecognizers>
-                        </Label> 
+                        </custom:CustomShadowEffects>
         </StackLayout> 
 
     </Grid>

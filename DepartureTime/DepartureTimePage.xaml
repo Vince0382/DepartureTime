@@ -25,11 +25,15 @@
 
              </controls:CarouselViewControl>
 
-             <Button x:Name="mainsettings" 
-                     Image="settings.png"
+             <Button x:Name="mainsettings"
                      Clicked="InitiateRotation"
+                     WidthRequest="40" 
+                     HeightRequest="40" 
+                     BorderRadius="20"
                      Margin="0,0,0,1"
-                     BackgroundColor="Transparent"
+                     Text="&lt;&gt;"
+                     BackgroundColor="{Binding UserTextColor}"
+                     TextColor="{Binding UserBackgroundColor}"
                      HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
 </ContentPage>

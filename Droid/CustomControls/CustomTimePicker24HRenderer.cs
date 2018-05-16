@@ -22,7 +22,7 @@ namespace DepartureTime.Droid
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.TimePicker> e)
         {
             base.OnElementChanged(e);
-
+            
             if (_TextField == null)
             {
                 _TextField = new EditText(this.Context)
