@@ -106,6 +106,12 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.3.0.0.482510\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.CrossPlatformTintedImage.Abstractions">
+      <HintPath>..\packages\Plugin.CrossPlatformTintedImage.1.0.0\lib\Xamarin.iOS10\Plugin.CrossPlatformTintedImage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.CrossPlatformTintedImage.iOS">
+      <HintPath>..\packages\Plugin.CrossPlatformTintedImage.1.0.0\lib\Xamarin.iOS10\Plugin.CrossPlatformTintedImage.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DepartureTime\DepartureTime.csproj">

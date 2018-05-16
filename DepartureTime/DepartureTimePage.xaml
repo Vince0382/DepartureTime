@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:controls2="clr-namespace:Plugin.CrossPlatformTintedImage.Abstractions;assembly=Plugin.CrossPlatformTintedImage.Abstractions"
              x:Class="DepartureTime.DepartureTimePage"
              BackgroundColor="{Binding UserBackgroundColor}"
              Padding="0">
@@ -9,31 +10,35 @@
                    VerticalOptions="FillAndExpand"
                    HorizontalOptions="FillAndExpand"
                    Margin="0,40,0,0">
-             <controls:CarouselViewControl x:Name="carousel"
-                ItemsSource="{Binding MyItemsSource}"
-                ShowArrows="true"
-                ArrowsBackgroundColor="{Binding UserBackgroundColor}"
-                ArrowsTintColor="{Binding UserTextColor}"
-                ArrowsTransparency="1"                           
-                ShowIndicators="true"
-                PositionSelectedCommand="{Binding MyCommand}"
-                PositionSelected="Handle_PositionSelected"
-                Scrolled="Handle_Scrolled"
-                Orientation="Horizontal"
-                VerticalOptions="FillAndExpand"
-                HorizontalOptions="FillAndExpand">
+             <controls:CarouselViewControl  x:Name="carousel"
+                                            ItemsSource="{Binding MyItemsSource}"
+                                            ShowArrows="true"
+                                            ArrowsBackgroundColor="{Binding UserBackgroundColor}"
+                                            ArrowsTintColor="{Binding UserTextColor}"
+                                            ArrowsTransparency="1"                           
+                                            ShowIndicators="true"
+                                            PositionSelectedCommand="{Binding MyCommand}"
+                                            PositionSelected="Handle_PositionSelected"
+                                            Scrolled="Handle_Scrolled"
+                                            Orientation="Horizontal"
+                                            VerticalOptions="FillAndExpand"
+                                            HorizontalOptions="FillAndExpand">
 
              </controls:CarouselViewControl>
 
-             <Button x:Name="mainsettings"
-                     Clicked="InitiateRotation"
-                     WidthRequest="40" 
-                     HeightRequest="40" 
-                     BorderRadius="20"
-                     Margin="0,0,0,1"
-                     Text="&lt;&gt;"
-                     BackgroundColor="{Binding UserTextColor}"
-                     TextColor="{Binding UserBackgroundColor}"
-                     HorizontalOptions="CenterAndExpand"/>
+             <controls2:TintedImage  x:Name="mainsettings"
+                                     Source="settings.png"
+                                     TintColor="{Binding UserTextColor}"
+                                     HeightRequest="40"
+                                     WidthRequest="40"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Margin="0,0,0,5">
+                        <controls2:TintedImage.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="InitiateRotation"/>
+                        </controls2:TintedImage.GestureRecognizers>
+
+            </controls2:TintedImage>
+                
+       
         </StackLayout>
 </ContentPage>

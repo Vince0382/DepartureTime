@@ -5,6 +5,7 @@ using Foundation;
 using UIKit;
 using UserNotifications;
 using CarouselView.FormsPlugin.iOS;
+using Plugin.CrossPlatformTintedImage.iOS;
 
 namespace DepartureTime.iOS
 {
@@ -33,6 +34,7 @@ namespace DepartureTime.iOS
 
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
+			TintedImageRenderer.Init();
 
 
             LoadApplication(new App());

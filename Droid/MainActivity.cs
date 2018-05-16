@@ -4,6 +4,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
+using Plugin.CrossPlatformTintedImage.Android;
 
 namespace DepartureTime.Droid
 {
@@ -20,7 +21,7 @@ namespace DepartureTime.Droid
 			       
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			CarouselViewRenderer.Init();   
-
+			TintedImageRenderer.Init();
 
             LoadApplication(new App());
         }

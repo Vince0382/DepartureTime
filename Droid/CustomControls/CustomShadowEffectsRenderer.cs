@@ -33,8 +33,7 @@ namespace DepartureTime.Droid
             {
                 Invalidate();
             }
-        }
-                      
+        }             
 				
 
         public override void Draw(Canvas canvas)
