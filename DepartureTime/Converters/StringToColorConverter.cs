@@ -19,7 +19,7 @@ namespace DepartureTime.Converters
 
             public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             {
-                if (value is string && value != null)
+                if (!string.IsNullOrEmpty((string)value))
                 {
                     ColorTypeConverter _colorTypeConverter = new ColorTypeConverter();
                     return (Color)_colorTypeConverter.ConvertFromInvariantString((string)value);

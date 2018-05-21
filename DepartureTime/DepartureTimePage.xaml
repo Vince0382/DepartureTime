@@ -12,10 +12,7 @@
                    Margin="0,40,0,0">
              <controls:CarouselViewControl  x:Name="carousel"
                                             ItemsSource="{Binding MyItemsSource}"
-                                            ShowArrows="true"
-                                            ArrowsBackgroundColor="{Binding UserBackgroundColor}"
-                                            ArrowsTintColor="{Binding UserTextColor}"
-                                            ArrowsTransparency="1"                           
+                                            ShowArrows="false"                         
                                             ShowIndicators="true"
                                             PositionSelectedCommand="{Binding MyCommand}"
                                             PositionSelected="Handle_PositionSelected"

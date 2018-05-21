@@ -11,6 +11,7 @@
     <AssemblyName>DepartureTime</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -72,6 +73,8 @@
     <Compile Include="Converters\StringToColorConverter.cs" />
     <Compile Include="Interfaces\IFileReadWrite.cs" />
     <Compile Include="CustomControls\CustomShadowEffects.cs" />
+    <Compile Include="CustomControls\CustomFontPicker.cs" />
+    <Compile Include="Interfaces\IFontProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControls\" />

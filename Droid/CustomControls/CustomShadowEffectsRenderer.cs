@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using Android.Widget;
-using Android.Content;
+﻿using Android.Content;
 using DepartureTime.CustomControls;
 using DepartureTime.Droid;
 using Xamarin.Forms;
@@ -14,7 +11,6 @@ namespace DepartureTime.Droid
 
 	public class CustomShadowEffectsRenderer : VisualElementRenderer<CustomShadowEffects>
     {
-        
 		public CustomShadowEffectsRenderer(Context context) : base(context)
         {
         }
@@ -34,8 +30,7 @@ namespace DepartureTime.Droid
                 Invalidate();
             }
         }             
-				
-
+		      
         public override void Draw(Canvas canvas)
         {
 			base.Draw(canvas);
@@ -62,8 +57,5 @@ namespace DepartureTime.Droid
             myPaint.Color = color;
             canvas.DrawPath(path, myPaint);
         }
-       
- 
-	}
-
+	}   
 }

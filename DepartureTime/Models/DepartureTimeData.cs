@@ -10,8 +10,9 @@ namespace DepartureTime.Models
         public TimeSpan Arrival;
         public TimeSpan WorkingHours;
         public TimeSpan LunchBreak;
-        public Color BgColor = Color.Black;
-        public Color TxtColor = Color.White;
+		public Color BgColor;
+		public Color TxtColor;
+		public string SelectedFont;
         public DepartureTimeData()
         {}
     }

@@ -10,7 +10,7 @@
     
     <Grid x:Name="mainlayout" 
           BackgroundColor="{Binding UserBackgroundColor}" 
-          Margin="0,0,0,10"
+          Margin="10"
           VerticalOptions="FillAndExpand"
           HorizontalOptions="FillAndExpand"
           RowSpacing="0">
@@ -30,14 +30,17 @@
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
             <Label Text="{Binding Path=Language[DicTitle]}"
-                   Margin="20,0,20,5"
                    FontSize="27"
+                   FontFamily="{Binding SelectedFont}"
                    TextColor="{Binding UserTextColor}"
                    FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
                    HorizontalOptions="CenterAndExpand" />
             
             <Label Text=""
                    Margin="10"
+                   FontFamily="{Binding SelectedFont}"
                    BackgroundColor="{Binding UserTextColor}"
                    HorizontalOptions="FillAndExpand"
                    HeightRequest="1" />
@@ -45,100 +48,198 @@
 
         <StackLayout Grid.Row="1"
                      Grid.Column="0"
-                     Margin="0,0,0,10"
                      VerticalOptions="FillAndExpand"
                      HorizontalOptions="FillAndExpand">
+            
+            <Grid x:Name="ControlsLayout"
+                  BackgroundColor="{Binding UserBackgroundColor}"
+                  Padding="1"
+                  Margin="10,10,10,0"
+                  RowSpacing="2"
+                  ColumnSpacing="1">
+
+                <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                     <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <BoxView Color="{Binding UserTextColor}"
+                         Opacity="0.9"
+                         Grid.Row="0"
+                         Grid.Column="1"/>
+                
+                <BoxView Color="{Binding UserTextColor}"
+                         Opacity="0.9"
+                         Grid.Row="1"
+                         Grid.Column="1"/>
+
+                <BoxView Color="{Binding UserTextColor}"
+                         Opacity="0.9"
+                         Grid.Row="2"
+                         Grid.Column="1"/>
+
                 <Label Text="{Binding Path=Language[DicWorkingHours]}"
-                       FontSize="22"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       FontFamily="{Binding SelectedFont}"
                        TextColor="{Binding UserTextColor}"
-                       HorizontalOptions="CenterAndExpand" />
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"/>
                 
                 <custom:CustomTimePicker24H x:Name="workingtimetext"
+                                            Grid.Row="0"
+                                            Grid.Column="1"
                                             Time="{Binding WorkingHours, Mode=TwoWay}"
-                                            BackgroundColor="{Binding UserTextColor}"
                                             Format="HH:mm"
+                                            FontFamily="{Binding SelectedFont}"
                                             TextColor="{Binding UserBackgroundColor}"
-                                            HorizontalOptions="CenterAndExpand" />
+                                            BackgroundColor="Transparent"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="Center"/>
 
                 <Label Text="{Binding Path=Language[DicArrival]}"
-                       Margin="0,10,0,0"
-                       FontSize="22"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       FontFamily="{Binding SelectedFont}"
                        TextColor="{Binding UserTextColor}"
-                       HorizontalOptions="CenterAndExpand" />
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"/>
 
                 <TimePicker x:Name="arrivaltext"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontFamily="{Binding SelectedFont}"
                             Time="{Binding Arrival, Mode=TwoWay}"
                             TextColor="{Binding UserBackgroundColor}"
-                            BackgroundColor="{Binding UserTextColor}"
-                            HorizontalOptions="CenterAndExpand" />
+                            BackgroundColor="Transparent"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="Center"/>
 
                 <Label Text="{Binding Path=Language[DicLunchBreak]}"
-                       Margin="0,10,0,0"
-                       FontSize="22"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       FontFamily="{Binding SelectedFont}"
                        TextColor="{Binding UserTextColor}"
-                       HorizontalOptions="CenterAndExpand"/>
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"/>
 
                 <custom:CustomTimePicker24H x:Name="lunchbreaktext"
+                                            Grid.Row="2"
+                                            Grid.Column="1"
                                             Time="{Binding LunchBreak, Mode=TwoWay}"
                                             Format="HH:mm"
+                                            FontFamily="{Binding SelectedFont}"
                                             TextColor="{Binding UserBackgroundColor}"
-                                            BackgroundColor="{Binding UserTextColor}"
-                                            HorizontalOptions="CenterAndExpand" />
+                                            BackgroundColor="Transparent"
+                                            HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="Center"/>
 
+          </Grid>
+          <Grid BackgroundColor="{Binding UserBackgroundColor}"
+                Padding="1"
+                Margin="10,10,10,0"
+                RowSpacing="2"
+                ColumnSpacing="1">
+
+               <Grid.RowDefinitions>
+                     <RowDefinition Height="Auto"/>
+               </Grid.RowDefinitions> 
+
+               <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="2*"/>
+               </Grid.ColumnDefinitions>
+
+
+                <Label Text="{Binding Path=Language[DicCalculLunch]}"
+                       TextColor="{Binding UserTextColor}"
+                       FontFamily="{Binding SelectedFont}"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"/>
+                
+                <Switch x:Name="calculswitch" 
+                        IsToggled="{Binding ShowCalculateLunch, Mode=TwoWay}"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="EndAndExpand" 
+                        VerticalOptions="Center"/>
+
+            </Grid>
+
+            <Grid BackgroundColor="{Binding UserBackgroundColor}"
+                  Padding="1"
+                  Margin="10,10,10,0"
+                  RowSpacing="2"
+                  ColumnSpacing="1"
+                  IsVisible="{Binding ShowCalculateLunch}">
+
+               <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+               </Grid.RowDefinitions> 
+
+               <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+               </Grid.ColumnDefinitions>
+                
+                <BoxView Color="{Binding UserTextColor}"
+                         Opacity="0.9"
+                         Grid.Row="0"
+                         Grid.Column="1"/>
+                
+                <BoxView Color="{Binding UserTextColor}"
+                         Opacity="0.9"
+                         Grid.Row="1"
+                         Grid.Column="1"/>
+
+                <Label Text="{Binding Path=Language[DicLunchStart]}"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       FontFamily="{Binding SelectedFont}"
+                       TextColor="{Binding UserTextColor}" 
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"/>
+        
+                <TimePicker x:Name="inlunch"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontFamily="{Binding SelectedFont}"
+                            Time="{Binding LunchStart, Mode=TwoWay}"
+                            TextColor="{Binding UserBackgroundColor}"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="CenterAndExpand" />
+        
+                <Label Text="{Binding Path=Language[DicLunchEnd]}"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       FontFamily="{Binding SelectedFont}"
+                       TextColor="{Binding UserTextColor}" 
+                       HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Center"/>
+        
+                <TimePicker x:Name="outlunch"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontFamily="{Binding SelectedFont}"
+                            Time="{Binding LunchEnd, Mode=TwoWay}"
+                            TextColor="{Binding UserBackgroundColor}"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="CenterAndExpand"/>
+
+             </Grid>
             
-                <StackLayout Orientation="Horizontal" 
-                             BackgroundColor="{Binding UserBackgroundColor}"
-                             HorizontalOptions="FillAndExpand" 
-                             Margin="20,20,20,0"
-                             VerticalOptions="Center">
-                    
-                       <Label Text="{Binding Path=Language[DicCalculLunch]}" 
-                              TextColor="{Binding UserTextColor}" 
-                              VerticalOptions="CenterAndExpand" 
-                              HorizontalOptions="StartAndExpand"/>
-                    
-                       <Switch x:Name="calculswitch" 
-                               IsToggled="{Binding ShowCalculateLunch, Mode=TwoWay}"
-                               HorizontalOptions="End" 
-                               VerticalOptions="Center"/>
-
-                </StackLayout>
-                                     
-                <StackLayout x:Name="SettingsStack"
-                             IsVisible="{Binding ShowCalculateLunch}"
-                             Orientation="Horizontal" 
-                             HorizontalOptions="FillAndExpand" 
-                             VerticalOptions="CenterAndExpand"
-                             BackgroundColor="{Binding UserBackgroundColor}"
-                             Margin="1">
-                
-                        <Label Text="{Binding Path=Language[DicLunchStart]}"
-                               Margin="40,0,0,0"
-                               TextColor="{Binding UserTextColor}" 
-                               VerticalOptions="Center" 
-                               HorizontalOptions="CenterAndExpand"/>
-                
-                        <TimePicker x:Name="inlunch"
-                                    Time="{Binding LunchStart, Mode=TwoWay}"
-                                    TextColor="{Binding UserBackgroundColor}"
-                                    BackgroundColor="{Binding UserTextColor}"
-                                    VerticalOptions="Center" 
-                                    HorizontalOptions="CenterAndExpand" />
-                
-                        <Label Text="{Binding Path=Language[DicLunchEnd]}"
-                               TextColor="{Binding UserTextColor}" 
-                               VerticalOptions="Center" 
-                               HorizontalOptions="CenterAndExpand"/>
-                
-                        <TimePicker x:Name="outlunch"
-                                    Time="{Binding LunchEnd, Mode=TwoWay}"
-                                    Margin="0,0,40,0"
-                                    TextColor="{Binding UserBackgroundColor}"
-                                    BackgroundColor="{Binding UserTextColor}"
-                                    VerticalOptions="Center" 
-                                    HorizontalOptions="CenterAndExpand"/>
-                 </StackLayout>
- 
          </StackLayout>
 
 
@@ -146,57 +247,91 @@
                       Grid.Row="2"
                       Grid.Column="0"
                       VerticalOptions="FillAndExpand"
-                      HorizontalOptions="FillAndExpand"
-                      Margin="0,0,0,10">
+                      HorizontalOptions="FillAndExpand">
 
-                        <StackLayout Orientation="Horizontal">
-                        
+                      <Grid ColumnSpacing="5"
+                            RowSpacing="2"
+                            BackgroundColor="{Binding UserBackgroundColor}"
+                            Padding="1"
+                            Margin="10,20,10,0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                                    
                             <Label Text=""
-                                   Margin="10,0,10,0"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   FontFamily="{Binding SelectedFont}"
                                    BackgroundColor="{Binding UserTextColor}"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="FillAndExpand"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Start"
+                                   VerticalOptions="CenterAndExpand"
                                    HeightRequest="1" />
                         
                             <Label Text="{Binding Path=Language[DicLbResult1]}"
-                                   Margin="-25,0,-25,0"
-                                   FontSize="22"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   FontSize="20"
+                                   FontFamily="{Binding SelectedFont}"
                                    TextColor="{Binding UserTextColor}"
-                                   HorizontalOptions="CenterAndExpand" />
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center" />
                         
                             <Label Text=""
-                                   Margin="10,0,10,0"
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   FontFamily="{Binding SelectedFont}"
                                    BackgroundColor="{Binding UserTextColor}"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="FillAndExpand"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="End"
+                                   VerticalOptions="CenterAndExpand"
                                    HeightRequest="1" />
-                        </StackLayout>
-                    
-                        <Label Text="{Binding Path=Language[DicLbResult2]}"
-                               Margin="0,-8,0,0"
-                               FontSize="12"
-                               TextColor="{Binding UserTextColor}"
-                               HorizontalOptions="CenterAndExpand" />  
-                        <custom:CustomShadowEffects HorizontalOptions="Center"
-                               VerticalOptions="Center"
-                               BackgroundColor="{Binding UserBackgroundColor}"
-                               Margin="0,12,0,15"
-                               HasShadow="true"
-                               ShadowColor="{Binding UserTextColor}">
-                
-                               <Button x:Name="resultlabel"
-                                       Text="{Binding Result, StringFormat='{0:c}'}"
-                                       FontAttributes="Bold"
-                                       FontSize="24"
-                                       BorderWidth="0"
-                                       BackgroundColor="{Binding UserBackgroundColor}"
-                                       TextColor="{Binding UserTextColor}"
-                                       HorizontalOptions="CenterAndExpand"
-                                       Margin="-15"
-                                       Command="{Binding SetNotification}">
-                               </Button> 
 
-                        </custom:CustomShadowEffects>
+                                
+                            <Label Text="{Binding Path=Language[DicLbResult2]}"
+                                   Grid.Row="1"
+                                   Grid.ColumnSpan="3"
+                                   FontSize="12"
+                                   FontFamily="{Binding SelectedFont}"
+                                   TextColor="{Binding UserTextColor}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"/>  
+                
+                            <custom:CustomShadowEffects HorizontalOptions="Center"
+                                                        VerticalOptions="Center"
+                                                        BackgroundColor="{Binding UserBackgroundColor}"
+                                                        Grid.Row="2"
+                                                        Grid.ColumnSpan="3"
+                                                        Margin="20"
+                                                        HasShadow="true"
+                                                        ShadowColor="{Binding UserTextColor}">
+                    
+                                                       <Button x:Name="resultlabel"
+                                                               Text="{Binding Result, StringFormat='{0:c}'}"
+                                                               FontAttributes="Bold"
+                                                               FontSize="24"
+                                                               FontFamily="{Binding SelectedFont}"
+                                                               BorderWidth="0"
+                                                               BackgroundColor="{Binding UserBackgroundColor}"
+                                                               TextColor="{Binding UserTextColor}"
+                                                               HorizontalOptions="CenterAndExpand"
+                                                               Margin="-15"
+                                                               Command="{Binding SetNotification}">
+                                                       </Button> 
+
+                            </custom:CustomShadowEffects>
+
+                </Grid>
         </StackLayout> 
 
     </Grid>

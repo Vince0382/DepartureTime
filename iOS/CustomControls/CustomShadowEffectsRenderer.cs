@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Linq;
-using CoreGraphics;
 using DepartureTime.iOS;
 using DepartureTime.CustomControls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using System.Drawing;
-using UIKit;
 
 [assembly:ExportRenderer (typeof(CustomShadowEffects),typeof(CustomShadowEffectsRenderer))]
 namespace DepartureTime.iOS

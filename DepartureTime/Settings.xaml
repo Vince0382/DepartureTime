@@ -3,14 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="DepartureTime.Settings"
              xmlns:cnv="clr-namespace:DepartureTime.Converters;assembly=DepartureTime" 
-             xmlns:custom="clr-namespace:DepartureTime.CustomControls;assembly=DepartureTime"
-             >
+             xmlns:custom="clr-namespace:DepartureTime.CustomControls;assembly=DepartureTime">
 
     <Grid
         BackgroundColor="{Binding UserBackgroundColor}"
         VerticalOptions="FillAndExpand"
         HorizontalOptions="FillAndExpand"
-        RowSpacing="10"
+        RowSpacing="2"
         Margin="10">
 
         <Grid.RowDefinitions>
@@ -19,64 +18,127 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>  
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
+
+        <BoxView Color="{Binding UserTextColor}"
+                 Opacity="0.9"
+                 Grid.Row="0"
+                 Grid.Column="1"/>
+   
+        <BoxView Color="{Binding UserTextColor}"
+                 Opacity="0.9"
+                 Grid.Row="1"
+                 Grid.Column="1"/>
+
+        <BoxView Color="{Binding UserTextColor}"
+                 Opacity="0.9"
+                 Grid.Row="2"
+                 Grid.Column="1"/>
+
+        <BoxView Color="{Binding UserTextColor}"
+                 Opacity="0.9"
+                 Grid.Row="3"
+                 Grid.Column="1"/>
+
+        <BoxView Color="{Binding UserTextColor}"
+                 Opacity="0.9"
+                 Grid.Row="4"
+                 Grid.Column="1"/>
 
         <Label Text="{Binding Path=Language[DicBackground]}"
                TextColor="{Binding UserTextColor}"
                Grid.Row="0"
                Grid.Column="0"
-               VerticalOptions="CenterAndExpand"/>
-        <custom:CustomColorPicker BackgroundColor="{Binding UserTextColor}"
+               FontFamily="{Binding SelectedFont}"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
+        <custom:CustomColorPicker BackgroundColor="Transparent"
                                   TextColor="{Binding UserBackgroundColor}"
+                                  FontFamily="{Binding SelectedFont}"
                                   SelectedItem="{Binding UserBackgroundColor, Converter={cnv:StringToColorConverter}, Mode=TwoWay}"
                                   Grid.Row="0"
-                                  Grid.Column="1"/>  
+                                  Grid.Column="1"
+                                  VerticalOptions="CenterAndExpand"
+                                  HorizontalOptions="CenterAndExpand"/>  
 
         <Label Text="{Binding Path=Language[DicTextColor]}"
                TextColor="{Binding UserTextColor}"
                Grid.Row="1"
                Grid.Column="0"
-               VerticalOptions="CenterAndExpand"/>
-        <custom:CustomColorPicker BackgroundColor="{Binding UserTextColor}"
+               FontFamily="{Binding SelectedFont}"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
+        <custom:CustomColorPicker BackgroundColor="Transparent"
                                   TextColor="{Binding UserBackgroundColor}"
                                   SelectedItem="{Binding UserTextColor, Converter={cnv:StringToColorConverter}, Mode=TwoWay}"
                                   Grid.Row="1"
-                                  Grid.Column="1"/>
+                                  Grid.Column="1"
+                                  FontFamily="{Binding SelectedFont}"
+                                  VerticalOptions="CenterAndExpand"
+                                  HorizontalOptions="CenterAndExpand"/>
 
         <Label Text="{Binding Path=Language[DicSetWorkingHours]}"
                Grid.Row="2"
                Grid.Column="0"
+               FontFamily="{Binding SelectedFont}"
                TextColor="{Binding UserTextColor}"
-               VerticalOptions="CenterAndExpand" />                
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
         <custom:CustomTimePicker24H Time="{Binding WorkingHours, Mode=TwoWay}"
                                     Grid.Row="2"
                                     Grid.Column="1"
-                                    BackgroundColor="{Binding UserTextColor}"
+                                    FontFamily="{Binding SelectedFont}"
+                                    BackgroundColor="Transparent"
                                     Format="HH:mm"
                                     TextColor="{Binding UserBackgroundColor}"
-                                    VerticalOptions="CenterAndExpand" />
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="CenterAndExpand"/>
         
         <Label Text="{Binding Path=Language[DicLanguage]}"
                Grid.Row="3"
                Grid.Column="0"
+               FontFamily="{Binding SelectedFont}"
                TextColor="{Binding UserTextColor}"
-               VerticalOptions="CenterAndExpand" />
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
         <Picker x:Name="LanguagePicker"
                 Grid.Row="3"
                 Grid.Column="1"
+                FontFamily="{Binding SelectedFont}"
                 ItemsSource="{Binding LanguageList}"
                 SelectedItem="{Binding LanguageLabel, Mode=TwoWay}"
-                BackgroundColor="{Binding UserTextColor}"
-                TextColor="{Binding UserBackgroundColor}">
-        </Picker>
+                BackgroundColor="Transparent"
+                TextColor="{Binding UserBackgroundColor}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
+
+        <Label Text="{Binding Path=Language[DicFont]}"
+               Grid.Row="4"
+               Grid.Column="0"
+               FontFamily="{Binding SelectedFont}"
+               TextColor="{Binding UserTextColor}"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"/>
+        <custom:CustomFontPicker x:Name="FontPicker"
+                Grid.Row="4"
+                Grid.Column="1"
+                FontFamily="{Binding SelectedFont}"
+                SelectedItem="{Binding SelectedFont, Mode=TwoWay}"
+                BackgroundColor="Transparent"
+                TextColor="{Binding UserBackgroundColor}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
 
         <Button Grid.ColumnSpan="2"
-                Grid.Row="4"
+                Grid.Row="6"
+                FontFamily="{Binding SelectedFont}"
                 Text="{Binding Path=Language[DicBtSave]}"
                 BackgroundColor="Transparent"
                 TextColor="{Binding UserTextColor}"

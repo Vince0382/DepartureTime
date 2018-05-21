@@ -1,7 +1,4 @@
 ﻿using Xamarin.Forms;
-using DepartureTime.Helpers;
-using System.Reflection;
-using DepartureTime.Models;
 using DepartureTime.Classes;
 using DepartureTime.ViewModels;
 using DepartureTime.Interfaces;
@@ -14,7 +11,7 @@ namespace DepartureTime
         {
             InitializeComponent();
 
-            IDataProvider data = new DataProvider();
+			IDataProvider data = new DataProvider();
 
             MainPage = new DepartureTimePage(new DepartureTimeVM(data));
         }

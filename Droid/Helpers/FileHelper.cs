@@ -1,8 +1,6 @@
 ﻿using System;  
 using System.IO;  
-using Xamarin.Forms;  
-using DepartureTime;  
-using DepartureTime.Droid;
+using Xamarin.Forms;
 using DepartureTime.Interfaces;
 using DepartureTime.Droid.Helpers;
 [assembly: Dependency(typeof(FileHelper))] 

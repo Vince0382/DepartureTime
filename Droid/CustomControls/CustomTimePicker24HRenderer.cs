@@ -31,9 +31,10 @@ namespace DepartureTime.Droid
                     Clickable = false,
                     Tag = this
                 };
-
-                _TextField.Click += TextField_Click;
+                
+				_TextField.Click += TextField_Click;
                 SetNativeControl(_TextField);
+                                               
             }
 
             _TextField.Text = DateTime.Today.Add(Element.Time).ToString(Element.Format);
@@ -49,7 +50,5 @@ namespace DepartureTime.Droid
             Element.Time = new TimeSpan(e.HourOfDay, e.Minute, 0);
             _TextField.Text = DateTime.Today.Add(Element.Time).ToString(Element.Format);
         }
-    }
-
-
+    }   
 } 

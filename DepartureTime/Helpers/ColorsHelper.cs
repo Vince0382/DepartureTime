@@ -9,7 +9,6 @@ namespace DepartureTime.Helpers
 {
     public static class ColorsHelper
     {
-        
         public static ObservableCollection<String> GetColorList ()
         {
             ObservableCollection<String> colorNames = new ObservableCollection<string>();
@@ -51,7 +50,6 @@ namespace DepartureTime.Helpers
 
             return Color.Black;
         }
-
-
+      
     }
 }

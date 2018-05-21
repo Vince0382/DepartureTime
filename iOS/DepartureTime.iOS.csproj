@@ -10,6 +10,7 @@
     <RootNamespace>DepartureTime.iOS</RootNamespace>
     <AssemblyName>DepartureTime.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <ReleaseVersion>1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -167,6 +168,9 @@
     <Compile Include="CustomControls\CustomTimePicker24HRenderer.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="CustomControls\CustomShadowEffectsRenderer.cs" />
+    <Compile Include="CustomControls\CustomPickerRenderer.cs" />
+    <Compile Include="CustomControls\CustomTimePickerRenderer.cs" />
+    <Compile Include="Helpers\FontHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\settings2.png" />

@@ -1,9 +1,7 @@
 ﻿using System;  
 using System.IO;  
 using Xamarin.Forms;
-using DepartureTime;
 using DepartureTime.Interfaces;
-using DepartureTime.iOS;
 using DepartureTime.iOS.Helpers;
 
 [assembly: Dependency(typeof(FileHelper))]  
@@ -30,11 +28,6 @@ namespace DepartureTime.iOS.Helpers
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             return Path.Combine(documentsPath, filename);
         }
-
-
-
-		public FileHelper()
-        {
-        }
+        
     }
 }

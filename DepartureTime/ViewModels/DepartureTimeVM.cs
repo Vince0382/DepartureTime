@@ -23,6 +23,19 @@ namespace DepartureTime.ViewModels
         private TimeSpan _result;
         private DateTime _currentTime = DateTime.Today;
        
+        
+		public string SelectedFont
+		{
+			get { return _data.SelectedFont; }
+            set
+			{
+				if (_data.SelectedFont != value)
+				{
+					_data.SelectedFont = value;
+					OnPropertyChangedEvent("SelectedFont");
+				}
+			}
+		}
 
         public string LanguageLabel
         {

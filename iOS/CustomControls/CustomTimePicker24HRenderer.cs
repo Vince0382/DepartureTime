@@ -17,6 +17,7 @@ namespace DepartureTime.iOS
             var timePicker = (UIDatePicker)Control.InputView;
             timePicker.Locale = new NSLocale("no_nb");
 
+
             if (Control != null)
             {
                 Control.Text = new DateTime().ToString("HH:mm");

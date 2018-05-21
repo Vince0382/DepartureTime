@@ -1,6 +1,4 @@
-﻿using System;
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
@@ -17,8 +15,7 @@ namespace DepartureTime.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-
-			       
+       
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			CarouselViewRenderer.Init();   
 			TintedImageRenderer.Init();

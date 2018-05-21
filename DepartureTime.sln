@@ -76,5 +76,17 @@ Global
 		$8.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $9
 		$9.scope = text/x-csharp
+		$0.TextStylePolicy = $10
+		$10.FileWidth = 80
+		$10.TabsToSpaces = True
+		$10.scope = text/plain
+		$0.TextStylePolicy = $11
+		$11.inheritsSet = null
+		$11.scope = application/config+xml
+		$0.XmlFormattingPolicy = $12
+		$12.inheritsSet = null
+		$12.scope = application/config+xml
+		description = @Just a little app to cover one of the need of people who have to deal with clocking system.\n\nEnter your arrival time, set your working hours and your lunch break. This app will calculate for you the exact time when you can leave your work.\n\nAvailable in French and English for the time being.
+		version = 1.0
 	EndGlobalSection
 EndGlobal
