@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Reflection;
-using System.Linq;
 using Xamarin.Forms;
 using DepartureTime.Helpers;
 

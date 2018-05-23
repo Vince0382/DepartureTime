@@ -15,6 +15,10 @@ namespace DepartureTime.Droid
         public static Typeface GetTypeFaceFromFile(string fontFamily)
 		{
 			File fontFile = new File(fontPath + "/" + fontFamily);
+
+			if (string.IsNullOrEmpty(fontFamily)) 
+				return Typeface.Default;
+
             Typeface typeFace = Typeface.CreateFromFile(fontFile);
 
 			return typeFace;

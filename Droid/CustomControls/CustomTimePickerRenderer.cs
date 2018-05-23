@@ -40,10 +40,8 @@ namespace DepartureTime.Droid
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (!string.IsNullOrEmpty(Element.FontFamily))
-            {
-                Control.SetTypeface(TTFToFontHelper.GetTypeFaceFromFile(Element.FontFamily), TypefaceStyle.Normal);
-            }
+			Control.SetTypeface(TTFToFontHelper.GetTypeFaceFromFile(Element.FontFamily), TypefaceStyle.Normal);
+            
         }
 	}
 }

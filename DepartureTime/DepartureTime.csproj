@@ -75,6 +75,7 @@
     <Compile Include="CustomControls\CustomShadowEffects.cs" />
     <Compile Include="CustomControls\CustomFontPicker.cs" />
     <Compile Include="Interfaces\IFontProvider.cs" />
+    <Compile Include="Converters\SetDefaultFontConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControls\" />

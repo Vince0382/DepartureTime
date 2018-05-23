@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using UIKit;
 using DepartureTime.iOS.Helpers;
@@ -10,11 +11,11 @@ namespace DepartureTime.iOS.Helpers
 	public class FontHelper : IFontProvider
     {
 
-        public ObservableCollection<string> GetFonts()
+        public List<string> GetFonts()
 		{
 			var familyNames = UIFont.FamilyNames;
 
-            ObservableCollection<string> itemSource = new ObservableCollection<string>();
+            List<string> itemSource = new List<string>();
 
             foreach (var familyName in familyNames)
             {
@@ -25,8 +26,10 @@ namespace DepartureTime.iOS.Helpers
                 }
             }
 
+			itemSource.Sort();
+
             return itemSource;         
 		}
-      
+
     }
 }

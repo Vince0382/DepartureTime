@@ -1,10 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 
 namespace DepartureTime.Interfaces
 {
     public interface IFontProvider
     {
-		ObservableCollection<string> GetFonts();
+		List<string> GetFonts();
     }
 
 }

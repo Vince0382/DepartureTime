@@ -39,9 +39,13 @@ namespace DepartureTime.Classes
 			data.WorkingHours = TimeSpan.Parse((string)GetDataFromXML(_BaliseWH));
 			data.BgColor = ColorsHelper.StringToColor((string)GetDataFromXML(_BaliseBGC));
 			data.TxtColor = ColorsHelper.StringToColor((string)GetDataFromXML(_BaliseTC));
-			data.SelectedFont = (string)GetDataFromXML(_BaliseFT);
-
-            return data;
+			string selectedFont = (string)GetDataFromXML(_BaliseFT);
+			if (selectedFont == "Default")
+				data.SelectedFont = "";
+			else
+				data.SelectedFont = selectedFont;
+            
+			return data;
         }
 
 

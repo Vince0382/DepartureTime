@@ -39,7 +39,7 @@
                    HorizontalOptions="CenterAndExpand" />
             
             <Label Text=""
-                   Margin="10"
+                   Margin="0,10,0,10"
                    FontFamily="{Binding SelectedFont}"
                    BackgroundColor="{Binding UserTextColor}"
                    HorizontalOptions="FillAndExpand"
@@ -54,7 +54,7 @@
             <Grid x:Name="ControlsLayout"
                   BackgroundColor="{Binding UserBackgroundColor}"
                   Padding="1"
-                  Margin="10,10,10,0"
+                  Margin="0,10,0,0"
                   RowSpacing="2"
                   ColumnSpacing="1">
 
@@ -144,7 +144,7 @@
           </Grid>
           <Grid BackgroundColor="{Binding UserBackgroundColor}"
                 Padding="1"
-                Margin="10,10,10,0"
+                Margin="0,10,0,0"
                 RowSpacing="2"
                 ColumnSpacing="1">
 
@@ -177,7 +177,7 @@
 
             <Grid BackgroundColor="{Binding UserBackgroundColor}"
                   Padding="1"
-                  Margin="10,10,10,0"
+                  Margin="0,10,0,0"
                   RowSpacing="2"
                   ColumnSpacing="1"
                   IsVisible="{Binding ShowCalculateLunch}">
@@ -253,7 +253,7 @@
                             RowSpacing="2"
                             BackgroundColor="{Binding UserBackgroundColor}"
                             Padding="1"
-                            Margin="10,20,10,0">
+                            Margin="0,20,0,0">
 
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>

@@ -7,7 +7,7 @@ namespace DepartureTime
         
         public Main()
         {         
-			InitializeComponent();
+			InitializeComponent();         
         }
 
     }

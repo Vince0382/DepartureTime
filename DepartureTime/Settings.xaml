@@ -130,7 +130,7 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 FontFamily="{Binding SelectedFont}"
-                SelectedItem="{Binding SelectedFont, Mode=TwoWay}"
+                SelectedItem="{Binding SelectedFont, Converter={cnv:SetDefaultFontConverter}, Mode=TwoWay}"
                 BackgroundColor="Transparent"
                 TextColor="{Binding UserBackgroundColor}"
                 VerticalOptions="CenterAndExpand"
